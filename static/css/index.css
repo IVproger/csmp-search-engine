@@ -145,6 +145,15 @@ body {
   font-size: 1.05rem;
 }
 
+.intro-flow {
+  display: grid;
+  gap: 1rem;
+}
+
+.intro-pair {
+  margin-bottom: 0 !important;
+}
+
 .figure-card {
   margin: 0;
   background: #fff;
@@ -265,6 +274,14 @@ body {
 .results-carousel .item img {
   width: 100%;
   border-radius: 8px;
+}
+
+.metric-slide-caption {
+  margin: 0.7rem 0 0.1rem;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+  text-align: center;
 }
 
 .metrics-grid {

@@ -69,40 +69,6 @@
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <div class="more-works-container">
-    <button class="more-works-btn" onclick="toggleMoreWorks()" title="Related Literature">
-      <i class="fas fa-book-open"></i>
-      References
-      <i class="fas fa-chevron-down dropdown-arrow"></i>
-    </button>
-    <div class="more-works-dropdown" id="moreWorksDropdown">
-      <div class="dropdown-header">
-        <h4>Related Works</h4>
-        <button class="close-btn" onclick="toggleMoreWorks()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="works-list">
-        <a href="https://arxiv.org/abs/2502.06354" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>JESTR</h5>
-            <p>JESTR was chosen as a lightweight baseline based on a dual-encoder architecture, combining a multilayer perceptron (MLP) for spectral encoding with a graph neural network (GNN) molecular encoder.</p>
-            <span class="work-venue">arXiv 2025</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://arxiv.org/abs/2504.16513" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>CSU-MS2</h5>
-            <p>CSU-MS2 was selected as a more advanced and task-specialized approach. Its architecture combines a transformer-based spectral encoder and a GIN-based molecular encoder with an External Space Attention Aggregation (ESA) module for cross-modal alignment.</p>
-            <span class="work-venue">arXiv 2025</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
   <main id="main-content">
     <section class="hero hero-lab">
       <div class="hero-body">
@@ -158,19 +124,45 @@
     <section class="section">
       <div class="container is-max-desktop">
         <h2 class="title is-3">Introduction and Problem Statement</h2>
-        <div class="columns is-vcentered">
-          <div class="column is-7">
-            <div class="content has-text-justified">
-              <p>Tandem mass spectrometry (MS/MS) represents a widely used analytical approach applied across different chemical fields, including metabolomics, the synthesis of novel compounds and materials, as well as environmental and pharmaceutical research. It enables precise identification and structural elucidation of chemical entities ranging from small molecules to complex biomolecules and synthetic materials.</p>
-              <p>Despite the capabilities of modern spectrometers, the annotation process of assigning experimental spectra to corresponding molecular structures remains challenging. Conventional annotation approaches rely on spectral reference libraries such as NIST or Wiley, achieving correct identification through direct fingerprint spectral matching. These approaches perform well for known compounds but are limited by the incompleteness of available databases, which cover only a fraction of the huge and diverse chemical space. As a result, their effectiveness diminishes for novel molecules, structural isomers, or complex compounds.</p>
-              <p>Furthermore, annotation is complicated by variability in experimental conditions and instrument configuration. Differences in selected ionization modes, collision energies, and fragmentation techniques can produce markedly different spectra diagrams for identical molecules. Such variability hinders reproducibility and contributes to a large fraction of unannotated spectra often termed “spectral dark matter”, limiting both reliability and throughput in chemical analyses and experiments.</p>
+        <div class="intro-flow">
+          <div class="columns is-vcentered intro-pair">
+            <div class="column is-7">
+              <div class="content has-text-justified">
+                <p>Tandem mass spectrometry (MS/MS) represents a widely used analytical approach applied across different chemical fields, including metabolomics, the synthesis of novel compounds and materials, as well as environmental and pharmaceutical research. It enables precise identification and structural elucidation of chemical entities ranging from small molecules to complex biomolecules and synthetic materials.</p>
+              </div>
+            </div>
+            <div class="column is-5">
+              <figure class="figure-card">
+                <img src="static/images/workflow.png" alt="General principle of mass spectrometry workflow">
+                <figcaption>General principle of mass spectrometry, illustrating analyte ionization, ion separation according to mass-to-charge ratio and spectrum generation through ion detection.</figcaption>
+              </figure>
             </div>
           </div>
-          <div class="column is-5">
-            <figure class="figure-card">
-              <img src="static/images/fragmentation_analyzis.png" alt="Fragmentation analysis">
-              <figcaption>Illustrative example of precursor-ion fragmentation pathways, characteristic product ions, and neutral losses in tandem mass spectrometry.</figcaption>
-            </figure>
+          <div class="columns is-vcentered intro-pair">
+            <div class="column is-5">
+              <figure class="figure-card">
+                <img src="static/images/mass_spec_diagram.png" alt="Mass spectrum diagram">
+                <figcaption>Conventional spectral visualization represents fragment mass-to-charge ratio along the horizontal axis and relative ion intensity along the vertical axis.</figcaption>
+              </figure>
+            </div>
+            <div class="column is-7">
+              <div class="content has-text-justified">
+                <p>Despite the capabilities of modern spectrometers, the annotation process of assigning experimental spectra to corresponding molecular structures remains challenging. Conventional annotation approaches rely on spectral reference libraries such as NIST or Wiley, achieving correct identification through direct fingerprint spectral matching. These approaches perform well for known compounds but are limited by the incompleteness of available databases, which cover only a fraction of the huge and diverse chemical space. As a result, their effectiveness diminishes for novel molecules, structural isomers, or complex compounds.</p>
+              </div>
+            </div>
+          </div>
+          <div class="columns is-vcentered intro-pair">
+            <div class="column is-7">
+              <div class="content has-text-justified">
+                <p>Furthermore, annotation is complicated by variability in experimental conditions and instrument configuration. Differences in selected ionization modes, collision energies, and fragmentation techniques can produce markedly different spectra diagrams for identical molecules. Such variability hinders reproducibility and contributes to a large fraction of unannotated spectra often termed “spectral dark matter”, limiting both reliability and throughput in chemical analyses and experiments.</p>
+              </div>
+            </div>
+            <div class="column is-5">
+              <figure class="figure-card">
+                <img src="static/images/fragmentation_analyzis.png" alt="Fragmentation analysis">
+                <figcaption>Illustrative example of precursor-ion fragmentation pathways, characteristic product ions, and neutral losses in tandem mass spectrometry.</figcaption>
+              </figure>
+            </div>
           </div>
         </div>
       </div>
@@ -230,25 +222,35 @@
           <p>This subsection summarizes the quantitative results obtained with the unified evaluation pipeline. It reports the embedding-space quality and retrieval performance of the two selected models, JESTR and CSU-MS2, evaluated under identical conditions.</p>
           <p>Both models are able to separate matching and mismatched spectrum--molecule pairs in the learned latent space, as the observed differences between self-similarity and random-similarity distributions show.</p>
         </div>
-        <div class="columns is-multiline">
-          <div class="column is-6">
-            <figure class="figure-card">
-              <img src="static/images/CSU-MS2_TRANING.png" alt="CSU-MS2 training dynamics">
-              <figcaption>Training dynamics of the CSU-MS2 model.</figcaption>
-            </figure>
+        <div id="evaluation-metrics-carousel" class="carousel results-carousel metrics-carousel">
+          <div class="item">
+            <img src="static/images/JESTER_TRANING.png" alt="JESTR training dynamics" loading="lazy">
+            <p class="metric-slide-caption">Training and validation loss dynamics for the JESTR model.</p>
           </div>
-          <div class="column is-6">
-            <figure class="figure-card">
-              <img src="static/images/csu_ms_2_sim_distribution.png" alt="CSU-MS2 similarity distribution">
-              <figcaption>Distribution of self-similarity and random-similarity values for the CSU-MS2 model.</figcaption>
-            </figure>
+          <div class="item">
+            <img src="static/images/CSU-MS2_TRANING.png" alt="CSU-MS2 training dynamics" loading="lazy">
+            <p class="metric-slide-caption">Training dynamics of the CSU-MS2 model.</p>
           </div>
-        </div>
-        <div id="results-carousel" class="carousel results-carousel screenshot-carousel">
-          <div class="item"><img src="static/images/carousel1.jpg" alt="Search engine screenshot 1" loading="lazy"></div>
-          <div class="item"><img src="static/images/carousel2.jpg" alt="Search engine screenshot 2" loading="lazy"></div>
-          <div class="item"><img src="static/images/carousel3.jpg" alt="Search engine screenshot 3" loading="lazy"></div>
-          <div class="item"><img src="static/images/carousel4.jpg" alt="Search engine screenshot 4" loading="lazy"></div>
+          <div class="item">
+            <img src="static/images/jester_similarity_distribution.png" alt="JESTR similarity distribution" loading="lazy">
+            <p class="metric-slide-caption">Distribution of self-similarity and random-similarity values for the JESTR model.</p>
+          </div>
+          <div class="item">
+            <img src="static/images/jester_similarity_matrix_block.png" alt="JESTR similarity matrix block" loading="lazy">
+            <p class="metric-slide-caption">Local 10x10 cosine-similarity matrix block for the JESTR model.</p>
+          </div>
+          <div class="item">
+            <img src="static/images/csu_ms_2_sim_distribution.png" alt="CSU-MS2 similarity distribution" loading="lazy">
+            <p class="metric-slide-caption">Distribution of self-similarity and random-similarity values for the CSU-MS2 model.</p>
+          </div>
+          <div class="item">
+            <img src="static/images/csu_ms2_sim_matrix.png" alt="CSU-MS2 similarity matrix block" loading="lazy">
+            <p class="metric-slide-caption">Local 10x10 cosine-similarity matrix block for the CSU-MS2 model.</p>
+          </div>
+          <div class="item">
+            <img src="static/images/retrieval_metrics_comparison.png" alt="Retrieval metrics comparison" loading="lazy">
+            <p class="metric-slide-caption">Comparative retrieval performance of JESTR and CSU-MS2 across different cutoff values K.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -335,16 +337,5 @@
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column is-8">
-          <div class="content">
-            <p>Adapted from the Academic Project Page Template for thesis defense presentation.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
 </body>
 </html>
