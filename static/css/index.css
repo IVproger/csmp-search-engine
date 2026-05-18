@@ -56,8 +56,8 @@ body {
   line-height: 1.14 !important;
   font-weight: 700 !important;
   font-size: clamp(1.95rem, 3.2vw, 2.75rem) !important;
-  max-width: 900px;
-  margin: 0 auto 0.38rem !important;
+  /* max-width: 900px;
+  margin: 0 auto 0.38rem !important; */
   text-wrap: balance;
 }
 
@@ -203,7 +203,7 @@ body {
   background: #fff;
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
-  padding: 0.8rem;
+  padding: 0.2rem;
   box-shadow: var(--shadow-sm);
 }
 
