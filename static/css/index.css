@@ -23,6 +23,7 @@ html {
 body {
   font-family: 'IBM Plex Sans', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--ink-strong);
+  font-size: 18px;
   line-height: 1.7;
   background:
     radial-gradient(circle at 5% -10%, #dceaf6 0%, transparent 32%),
@@ -30,6 +31,10 @@ body {
     var(--surface);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.container.is-max-desktop {
+  max-width: min(1360px, 96vw) !important;
 }
 
 .hero {
@@ -42,7 +47,7 @@ body {
 }
 
 .hero-body {
-  padding: 2.9rem 1.5rem 2.1rem;
+  padding: 2.9rem 0.9rem 2.1rem;
 }
 
 .publication-title {
@@ -50,7 +55,7 @@ body {
   color: var(--lab-navy) !important;
   line-height: 1.08 !important;
   font-weight: 700 !important;
-  font-size: clamp(2rem, 4.6vw, 3.5rem) !important;
+  font-size: clamp(2.35rem, 5vw, 4rem) !important;
   margin-bottom: 0.55rem !important;
   text-wrap: balance;
 }
@@ -58,7 +63,7 @@ body {
 .hero-subtitle {
   max-width: 760px;
   margin: 0 auto 0.8rem;
-  font-size: clamp(1.05rem, 2.05vw, 1.38rem);
+  font-size: clamp(1.2rem, 2.25vw, 1.52rem);
   line-height: 1.35;
   color: var(--ink-mid);
   text-wrap: balance;
@@ -77,7 +82,7 @@ body {
 .authors-block p {
   margin: 0.03rem 0;
   color: var(--ink-mid);
-  font-size: 1.02rem;
+  font-size: 1.1rem;
 }
 
 .authors-block a {
@@ -125,7 +130,7 @@ body {
 }
 
 .section {
-  padding: 3.2rem 1.5rem;
+  padding: 3.2rem 0.9rem;
 }
 
 .section-soft {
@@ -137,12 +142,14 @@ body {
 .title.is-3 {
   font-family: 'Space Grotesk', 'IBM Plex Sans', sans-serif !important;
   color: var(--lab-navy);
+  font-size: clamp(1.6rem, 2.2vw, 2.05rem) !important;
   margin-bottom: 1.35rem !important;
 }
 
 .content.has-text-justified {
   color: var(--ink-mid);
-  font-size: 1.05rem;
+  font-size: 1.16rem;
+  line-height: 1.82;
 }
 
 .intro-flow {
@@ -160,13 +167,14 @@ body {
 
 .intro-figure img {
   width: 100%;
+  min-height: 320px;
   height: auto;
   object-fit: contain;
   border-radius: 10px;
 }
 
 .intro-figure figcaption {
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .figure-card {
@@ -181,12 +189,14 @@ body {
 .figure-card img {
   display: block;
   width: 100%;
+  max-height: 720px;
+  object-fit: contain;
   border-radius: 10px;
 }
 
 .figure-card figcaption {
   margin-top: 0.6rem;
-  font-size: 0.92rem;
+  font-size: 1rem;
   color: var(--ink-soft);
 }
 
@@ -289,6 +299,8 @@ body {
 .results-carousel .item img {
   width: 100%;
   border-radius: 8px;
+  max-height: 680px;
+  object-fit: contain;
 }
 
 .metric-slide-caption {
@@ -300,11 +312,23 @@ body {
 }
 
 .metrics-carousel {
-  margin-bottom: 0.2rem;
+  margin-bottom: 0;
+  padding-bottom: 0 !important;
 }
 
 .metrics-carousel .slider-pagination {
   display: none !important;
+}
+
+.metrics-carousel .slider-navigation-previous,
+.metrics-carousel .slider-navigation-next {
+  top: 42% !important;
+  margin-top: 0 !important;
+  transform: translateY(-50%);
+}
+
+.metrics-carousel .slider-container {
+  min-height: 0 !important;
 }
 
 .metrics-grid {
@@ -561,7 +585,20 @@ code {
   }
 
   .section {
-    padding: 2.3rem 1rem;
+    padding: 2.3rem 0.75rem;
+  }
+
+  .container.is-max-desktop {
+    max-width: 98vw !important;
+  }
+
+  .content.has-text-justified {
+    font-size: 1.06rem;
+    line-height: 1.72;
+  }
+
+  .intro-figure img {
+    min-height: 240px;
   }
 
   .metrics-grid {
