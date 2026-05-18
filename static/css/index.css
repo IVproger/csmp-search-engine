@@ -398,17 +398,18 @@ body {
 }
 
 .conclusion-section {
-  padding-bottom: 0.1rem !important;
+  padding-bottom: 1rem !important;
   margin-bottom: 0 !important;
 }
 
 .bibtex-section {
-  padding-top: 0 !important;
+  padding-top: 1rem !important;
   margin-top: 0 !important;
 }
 
 .bibtex-section .title {
   margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 .compact-results-table {
@@ -434,6 +435,7 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.9rem;
+  gap: 1rem;
 }
 
 pre {
