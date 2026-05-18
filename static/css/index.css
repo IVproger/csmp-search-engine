@@ -55,7 +55,7 @@ body {
   color: var(--lab-navy) !important;
   line-height: 1.14 !important;
   font-weight: 700 !important;
-  font-size: clamp(1.95rem, 3.2vw, 2.75rem) !important;
+  font-size: clamp(2.35rem, 4.3vw, 3.55rem) !important;
   max-width: none;
   width: 100%;
   white-space: nowrap;
@@ -66,7 +66,7 @@ body {
 .hero-subtitle {
   max-width: 980px;
   margin: 0 auto 1rem;
-  font-size: clamp(1.3rem, 2.35vw, 1.65rem);
+  font-size: clamp(1.5rem, 2.8vw, 2.05rem);
   font-weight: 500;
   line-height: 1.4;
   color: var(--ink-mid);
