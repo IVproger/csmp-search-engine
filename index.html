@@ -43,8 +43,9 @@
 
   <title>CSMP Thesis | Ivan Golov & Rustam Lukmanov</title>
 
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="static/images/favicon.svg?v=20260518">
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico?v=20260518">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico?v=20260518">
 
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
@@ -126,39 +127,39 @@
         <h2 class="title is-3">Introduction and Problem Statement</h2>
         <div class="intro-flow">
           <div class="columns is-vcentered intro-pair">
-            <div class="column is-7">
+            <div class="column is-6">
               <div class="content has-text-justified">
                 <p>Tandem mass spectrometry (MS/MS) represents a widely used analytical approach applied across different chemical fields, including metabolomics, the synthesis of novel compounds and materials, as well as environmental and pharmaceutical research. It enables precise identification and structural elucidation of chemical entities ranging from small molecules to complex biomolecules and synthetic materials.</p>
               </div>
             </div>
-            <div class="column is-5">
-              <figure class="figure-card">
+            <div class="column is-6">
+              <figure class="figure-card intro-figure">
                 <img src="static/images/workflow.png" alt="General principle of mass spectrometry workflow">
                 <figcaption>General principle of mass spectrometry, illustrating analyte ionization, ion separation according to mass-to-charge ratio and spectrum generation through ion detection.</figcaption>
               </figure>
             </div>
           </div>
           <div class="columns is-vcentered intro-pair">
-            <div class="column is-5">
-              <figure class="figure-card">
+            <div class="column is-6">
+              <figure class="figure-card intro-figure">
                 <img src="static/images/mass_spec_diagram.png" alt="Mass spectrum diagram">
                 <figcaption>Conventional spectral visualization represents fragment mass-to-charge ratio along the horizontal axis and relative ion intensity along the vertical axis.</figcaption>
               </figure>
             </div>
-            <div class="column is-7">
+            <div class="column is-6">
               <div class="content has-text-justified">
                 <p>Despite the capabilities of modern spectrometers, the annotation process of assigning experimental spectra to corresponding molecular structures remains challenging. Conventional annotation approaches rely on spectral reference libraries such as NIST or Wiley, achieving correct identification through direct fingerprint spectral matching. These approaches perform well for known compounds but are limited by the incompleteness of available databases, which cover only a fraction of the huge and diverse chemical space. As a result, their effectiveness diminishes for novel molecules, structural isomers, or complex compounds.</p>
               </div>
             </div>
           </div>
           <div class="columns is-vcentered intro-pair">
-            <div class="column is-7">
+            <div class="column is-6">
               <div class="content has-text-justified">
                 <p>Furthermore, annotation is complicated by variability in experimental conditions and instrument configuration. Differences in selected ionization modes, collision energies, and fragmentation techniques can produce markedly different spectra diagrams for identical molecules. Such variability hinders reproducibility and contributes to a large fraction of unannotated spectra often termed “spectral dark matter”, limiting both reliability and throughput in chemical analyses and experiments.</p>
               </div>
             </div>
-            <div class="column is-5">
-              <figure class="figure-card">
+            <div class="column is-6">
+              <figure class="figure-card intro-figure">
                 <img src="static/images/fragmentation_analyzis.png" alt="Fragmentation analysis">
                 <figcaption>Illustrative example of precursor-ion fragmentation pathways, characteristic product ions, and neutral losses in tandem mass spectrometry.</figcaption>
               </figure>
