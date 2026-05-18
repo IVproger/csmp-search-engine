@@ -242,33 +242,165 @@
         </div>
 
         <div class="compact-table-wrap">
+          <h3 class="title is-4">Retrieval Performance (All Levels)</h3>
           <table class="table is-fullwidth is-bordered is-striped compact-results-table">
             <thead>
               <tr>
                 <th>Model</th>
-                <th>KL</th>
-                <th>Hit@1</th>
-                <th>Hit@100</th>
-                <th>Recall@1</th>
-                <th>Recall@100</th>
+                <th>Metric</th>
+                <th>Value</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>JESTR</td>
-                <td>1.6815</td>
+                <td>Hit Rate@1</td>
                 <td>0.1137</td>
-                <td>0.8660</td>
+              </tr>
+              <tr>
+                <td><strong>CSU-MS2</strong></td>
+                <td><strong>Hit Rate@1</strong></td>
+                <td><strong>0.2147</strong></td>
+              </tr>
+              <tr>
+                <td>JESTR</td>
+                <td>Precision@1</td>
+                <td>0.1137</td>
+              </tr>
+              <tr>
+                <td><strong>CSU-MS2</strong></td>
+                <td><strong>Precision@1</strong></td>
+                <td><strong>0.2147</strong></td>
+              </tr>
+              <tr>
+                <td>JESTR</td>
+                <td>Recall@1</td>
                 <td>0.0988</td>
+              </tr>
+              <tr>
+                <td><strong>CSU-MS2</strong></td>
+                <td><strong>Recall@1</strong></td>
+                <td><strong>0.1737</strong></td>
+              </tr>
+              <tr>
+                <td>JESTR</td>
+                <td>Hit Rate@5</td>
+                <td>0.3113</td>
+              </tr>
+              <tr>
+                <td><strong>CSU-MS2</strong></td>
+                <td><strong>Hit Rate@5</strong></td>
+                <td><strong>0.4633</strong></td>
+              </tr>
+              <tr>
+                <td>JESTR</td>
+                <td>Precision@5</td>
+                <td>0.0775</td>
+              </tr>
+              <tr>
+                <td><strong>CSU-MS2</strong></td>
+                <td><strong>Precision@5</strong></td>
+                <td><strong>0.1204</strong></td>
+              </tr>
+              <tr>
+                <td>JESTR</td>
+                <td>Recall@5</td>
+                <td>0.2914</td>
+              </tr>
+              <tr>
+                <td><strong>CSU-MS2</strong></td>
+                <td><strong>Recall@5</strong></td>
+                <td><strong>0.4172</strong></td>
+              </tr>
+              <tr>
+                <td>JESTR</td>
+                <td>Hit Rate@10</td>
+                <td>0.4303</td>
+              </tr>
+              <tr>
+                <td><strong>CSU-MS2</strong></td>
+                <td><strong>Hit Rate@10</strong></td>
+                <td><strong>0.5820</strong></td>
+              </tr>
+              <tr>
+                <td>JESTR</td>
+                <td>Precision@10</td>
+                <td>0.0594</td>
+              </tr>
+              <tr>
+                <td><strong>CSU-MS2</strong></td>
+                <td><strong>Precision@10</strong></td>
+                <td><strong>0.0830</strong></td>
+              </tr>
+              <tr>
+                <td>JESTR</td>
+                <td>Recall@10</td>
+                <td>0.4097</td>
+              </tr>
+              <tr>
+                <td><strong>CSU-MS2</strong></td>
+                <td><strong>Recall@10</strong></td>
+                <td><strong>0.5351</strong></td>
+              </tr>
+              <tr>
+                <td>JESTR</td>
+                <td>Hit Rate@100</td>
+                <td>0.8660</td>
+              </tr>
+              <tr>
+                <td><strong>CSU-MS2</strong></td>
+                <td><strong>Hit Rate@100</strong></td>
+                <td><strong>0.9053</strong></td>
+              </tr>
+              <tr>
+                <td>JESTR</td>
+                <td>Precision@100</td>
+                <td>0.0178</td>
+              </tr>
+              <tr>
+                <td><strong>CSU-MS2</strong></td>
+                <td><strong>Precision@100</strong></td>
+                <td><strong>0.0179</strong></td>
+              </tr>
+              <tr>
+                <td>JESTR</td>
+                <td>Recall@100</td>
                 <td>0.8510</td>
               </tr>
               <tr>
                 <td><strong>CSU-MS2</strong></td>
-                <td><strong>3.4280</strong></td>
-                <td><strong>0.2147</strong></td>
-                <td><strong>0.9053</strong></td>
-                <td><strong>0.1737</strong></td>
+                <td><strong>Recall@100</strong></td>
                 <td><strong>0.8719</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="compact-table-wrap">
+          <h3 class="title is-4">Embedding-Space Quality</h3>
+          <table class="table is-fullwidth is-bordered is-striped compact-results-table">
+            <thead>
+              <tr>
+                <th>Metric</th>
+                <th>JESTR</th>
+                <th>CSU-MS2</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Self-similarity mean</td>
+                <td>0.5237</td>
+                <td>0.5055</td>
+              </tr>
+              <tr>
+                <td>Other-similarity mean</td>
+                <td>0.1339</td>
+                <td>0.0015</td>
+              </tr>
+              <tr>
+                <td>KL divergence</td>
+                <td>1.6815</td>
+                <td>3.4280</td>
               </tr>
             </tbody>
           </table>

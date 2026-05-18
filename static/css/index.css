@@ -56,8 +56,10 @@ body {
   line-height: 1.14 !important;
   font-weight: 700 !important;
   font-size: clamp(1.95rem, 3.2vw, 2.75rem) !important;
-  /* max-width: 900px;
-  margin: 0 auto 0.38rem !important; */
+  max-width: none;
+  width: 100%;
+  white-space: nowrap;
+  margin: 0 auto 0.38rem !important;
   text-wrap: balance;
 }
 
@@ -98,7 +100,7 @@ body {
 
 .authors-block .institution {
   color: var(--ink-soft);
-  margin-top: 0.2rem;
+  margin-top: 0.8rem;
 }
 
 .publication-links {
@@ -164,7 +166,7 @@ body {
 }
 
 .intro-image-row {
-  margin-top: 0.8rem;
+  margin-top: 0.35rem;
 }
 
 .intro-image-row .column {
@@ -176,10 +178,16 @@ body {
   flex-direction: column;
   width: 100%;
   height: 100%;
+  padding: 0.55rem;
+}
+
+.intro-image-row .figure-card {
+  padding: 0.55rem;
 }
 
 .intro-image-row .intro-figure figcaption {
-  min-height: 4.8rem;
+  min-height: 0;
+  margin-top: 0.45rem;
 }
 
 .intro-figure {
@@ -188,8 +196,9 @@ body {
 
 .intro-figure img {
   width: 100%;
-  height: clamp(360px, 34vw, 520px);
-  object-fit: contain;
+  height: clamp(300px, 28vw, 430px);
+  object-fit: cover;
+  object-position: center;
   border-radius: 10px;
 }
 
@@ -618,6 +627,7 @@ code {
   .publication-title {
     font-size: 2rem !important;
     line-height: 1.2 !important;
+    white-space: normal;
   }
 
   .section {
