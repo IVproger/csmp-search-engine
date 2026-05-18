@@ -161,6 +161,10 @@ body {
   margin-bottom: 0 !important;
 }
 
+.intro-image-row {
+  margin-top: 0.8rem;
+}
+
 .intro-figure {
   padding: 1.15rem;
 }
