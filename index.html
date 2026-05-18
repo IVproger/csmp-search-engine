@@ -77,7 +77,7 @@
     </button>
     <div class="more-works-dropdown" id="moreWorksDropdown">
       <div class="dropdown-header">
-        <h4>Core Related Works</h4>
+        <h4>Related Works</h4>
         <button class="close-btn" onclick="toggleMoreWorks()">
           <i class="fas fa-times"></i>
         </button>
@@ -86,7 +86,7 @@
         <a href="https://arxiv.org/abs/2502.06354" class="work-item" target="_blank">
           <div class="work-info">
             <h5>JESTR</h5>
-            <p>Joint embedding for spectra and molecules.</p>
+            <p>JESTR was chosen as a lightweight baseline based on a dual-encoder architecture, combining a multilayer perceptron (MLP) for spectral encoding with a graph neural network (GNN) molecular encoder.</p>
             <span class="work-venue">arXiv 2025</span>
           </div>
           <i class="fas fa-external-link-alt"></i>
@@ -94,7 +94,7 @@
         <a href="https://arxiv.org/abs/2504.16513" class="work-item" target="_blank">
           <div class="work-info">
             <h5>CSU-MS2</h5>
-            <p>Dual-encoder retrieval with transformer + GIN.</p>
+            <p>CSU-MS2 was selected as a more advanced and task-specialized approach. Its architecture combines a transformer-based spectral encoder and a GIN-based molecular encoder with an External Space Attention Aggregation (ESA) module for cross-modal alignment.</p>
             <span class="work-venue">arXiv 2025</span>
           </div>
           <i class="fas fa-external-link-alt"></i>
@@ -108,7 +108,7 @@
       <div class="hero-body">
         <div class="container is-max-desktop has-text-centered">
           <h1 class="title is-1 publication-title">
-            Contrastive Spectrum-Molecular Pretraining (CSMP)
+            Contrastive Spectrum-Molecular Pretraining
           </h1>
           <p class="hero-subtitle">
             Building a Chemical Search Engine for Matching Tandem Mass Spectra to Molecular Structures
@@ -144,20 +144,32 @@
       </div>
     </section>
 
+    <section class="section section-soft">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>Tandem mass spectrometry (MS/MS) is a technique that produces molecular fragmentation spectra to identify the structural composition of chemical compounds in experimental samples. However, most existing annotation systems rely on exact reference search in spectral libraries or hand-crafted expert heuristics, which limits their ability to generalize across broader chemical space and reliably determine the structures of rare or previously unobserved molecules.</p>
+          <p>This thesis addresses this limitation by formulating spectrum--molecule matching as a contrastive representation learning problem, where MS/MS spectra and molecular structures are projected into a shared embedding space for scalable retrieval. Following the implementation of the proposed research methodology, a unified benchmark dataset containing 1,382,425 validated spectrum--molecule pairs and a molecular search database with 872,935 candidate structures were constructed from heterogeneous public resources.</p>
+          <p>Two modern dual-encoder retrieval models, JESTR and CSU-MS2, were fine-tuned and benchmarked under identical experimental conditions, with CSU-MS2 achieving a self-similarity mean of 0.51 and retrieval performance ranging from Hit Rate@1 of 0.21 to Hit Rate@100 of 0.91. The best-performing model was integrated into a deployable retrieval platform combining spectrum preprocessing, precursor-mass candidate filtering, embedding-based ranking, and indexed molecular search.</p>
+        </div>
+      </div>
+    </section>
+
     <section class="section">
       <div class="container is-max-desktop">
-        <h2 class="title is-3">Motivation and Key Problem</h2>
+        <h2 class="title is-3">Introduction and Problem Statement</h2>
         <div class="columns is-vcentered">
           <div class="column is-7">
             <div class="content has-text-justified">
-              <p>Tandem mass spectrometry is one of the most powerful tools for molecular analysis, yet practical annotation remains difficult. Classical library-based matching is highly effective for known compounds but weak for novel molecules, structural isomers, and underrepresented chemical regions.</p>
-              <p>In real workflows, heterogeneous file formats, metadata inconsistency, and instrument-dependent fragmentation patterns create a large amount of unannotated spectral data. The core thesis challenge was to bridge this gap by building a reproducible, scalable, and deployable retrieval system rather than a model-only prototype.</p>
+              <p>Tandem mass spectrometry (MS/MS) represents a widely used analytical approach applied across different chemical fields, including metabolomics, the synthesis of novel compounds and materials, as well as environmental and pharmaceutical research. It enables precise identification and structural elucidation of chemical entities ranging from small molecules to complex biomolecules and synthetic materials.</p>
+              <p>Despite the capabilities of modern spectrometers, the annotation process of assigning experimental spectra to corresponding molecular structures remains challenging. Conventional annotation approaches rely on spectral reference libraries such as NIST or Wiley, achieving correct identification through direct fingerprint spectral matching. These approaches perform well for known compounds but are limited by the incompleteness of available databases, which cover only a fraction of the huge and diverse chemical space. As a result, their effectiveness diminishes for novel molecules, structural isomers, or complex compounds.</p>
+              <p>Furthermore, annotation is complicated by variability in experimental conditions and instrument configuration. Differences in selected ionization modes, collision energies, and fragmentation techniques can produce markedly different spectra diagrams for identical molecules. Such variability hinders reproducibility and contributes to a large fraction of unannotated spectra often termed “spectral dark matter”, limiting both reliability and throughput in chemical analyses and experiments.</p>
             </div>
           </div>
           <div class="column is-5">
             <figure class="figure-card">
               <img src="static/images/fragmentation_analyzis.png" alt="Fragmentation analysis">
-              <figcaption>MS/MS fragmentation behavior motivates representation-driven retrieval.</figcaption>
+              <figcaption>Illustrative example of precursor-ion fragmentation pathways, characteristic product ions, and neutral losses in tandem mass spectrometry.</figcaption>
             </figure>
           </div>
         </div>
@@ -166,39 +178,43 @@
 
     <section class="section section-soft">
       <div class="container is-max-desktop">
-        <h2 class="title is-3">Research Questions and Goals</h2>
+        <h2 class="title is-3">Objective of the Work and Research Questions</h2>
+        <div class="content has-text-justified">
+          <p>The primary purpose of this work is therefore to design, implement, and evaluate an end-to-end computational framework for spectrum–molecule matching that bridges this gap by integrating three complementary contributions: (i) construction of a large-scale curated dataset from heterogeneous public MS/MS sources, (ii) unified benchmarking and comparative evaluation of modern cross-modal contrastive learning models under identical experimental conditions, and (iii) deployment of the best-performing model within a scalable chemical retrieval system capable of processing real spectral data under practical computational constraints.</p>
+        </div>
         <div class="rq-list">
-          <div class="rq-item"><span class="rq-tag">RQ1</span><p>How can heterogeneous public MS/MS data be curated into a leakage-aware benchmark for reliable training and evaluation?</p></div>
-          <div class="rq-item"><span class="rq-tag">RQ2</span><p>How do modern cross-modal dual encoders perform under one unified protocol (JESTR vs CSU-MS2)?</p></div>
-          <div class="rq-item"><span class="rq-tag">RQ3</span><p>How can the best model be integrated into a robust, low-latency chemical search engine for real usage?</p></div>
+          <div class="rq-item"><span class="rq-tag">RQ1</span><p>Which data engineering, preprocessing, and curation methods is required to consolidate heterogeneous and noisy public MS/MS resources into a consistent dataset appropriate for reliable model training and reproducible evaluation procedure?</p></div>
+          <div class="rq-item"><span class="rq-tag">RQ2</span><p>How effectively do modern cross-modal machine learning architectures address the spectrum–molecule matching task when evaluated under a unified benchmarking protocol based on standardized real-world experimental data?</p></div>
+          <div class="rq-item"><span class="rq-tag">RQ3</span><p>How can the most effective model be integrated into a deployable retrieval system that balances retrieval accuracy, computational efficiency, scalability, and robustness for realistic analytical use?</p></div>
         </div>
       </div>
     </section>
 
     <section class="section" id="architecture">
       <div class="container is-max-desktop">
-        <h2 class="title is-3">Architecture and Component Rollup</h2>
+        <h2 class="title is-3">System Architecture</h2>
         <div class="content has-text-justified">
-          <p>The deployed CSMP system is a modular pipeline designed for practical operation: web interface for spectrum submission, FastAPI orchestration, spectrum preprocessing and metadata parsing, CSU-MS2 inference via Triton, and mass-constrained embedding retrieval over an indexed molecular database.</p>
+          <p>To address RQ3, the proposed system is designed as an end-to-end retrieval pipeline that transforms raw MS/MS spectra into a ranked set of molecular structure candidates. Unlike traditional reference library matching, which depends on direct comparison with pre-annotated spectra, the system follows a representation learning paradigm in which spectra and molecular structures are projected into a shared latent space, allowing flexible and data-driven retrieval.</p>
+          <p>The overall architecture follows a modular service-oriented design built from five main components.</p>
         </div>
         <figure class="figure-card large">
           <img src="static/images/CSMP_arhitecture_diagram.jpg" alt="CSMP system architecture diagram">
-          <figcaption>End-to-end architecture: from uploaded spectra to ranked molecular candidates.</figcaption>
+          <figcaption>System architecture of the proposed spectrum–molecule retrieval system.</figcaption>
         </figure>
         <div class="columns is-multiline rollup-grid">
-          <div class="column is-4"><div class="rollup-item"><span class="rollup-step">1</span><p>Input files: mzML, MGF, MSP, JSON.</p></div></div>
-          <div class="column is-4"><div class="rollup-item"><span class="rollup-step">2</span><p>FastAPI validates requests and coordinates batching.</p></div></div>
-          <div class="column is-4"><div class="rollup-item"><span class="rollup-step">3</span><p>Preprocessing standardizes spectra and precursor metadata.</p></div></div>
-          <div class="column is-4"><div class="rollup-item"><span class="rollup-step">4</span><p>Triton serves CSU-MS2 spectrum embeddings.</p></div></div>
-          <div class="column is-4"><div class="rollup-item"><span class="rollup-step">5</span><p>Mass filter narrows candidates before similarity search.</p></div></div>
-          <div class="column is-4"><div class="rollup-item"><span class="rollup-step">6</span><p>UI presents ranked candidates and molecule details.</p></div></div>
+          <div class="column is-4"><div class="rollup-item"><span class="rollup-step">1</span><p><strong>Client Interface:</strong> A lightweight web interface lets the user upload MS/MS spectra in several formats and inspect the retrieved candidates.</p></div></div>
+          <div class="column is-4"><div class="rollup-item"><span class="rollup-step">2</span><p><strong>API Layer:</strong> A FastAPI-based service plays the role of central orchestration component, accepting incoming requests, managing batching, and coordinating the work of the downstream modules.</p></div></div>
+          <div class="column is-4"><div class="rollup-item"><span class="rollup-step">3</span><p><strong>Spectrum Processing Module:</strong> This component normalizes heterogeneous input formats, extracts peak lists, and parses metadata such as precursor mass, adduct, and formula.</p></div></div>
+          <div class="column is-4"><div class="rollup-item"><span class="rollup-step">4</span><p><strong>Inference Service:</strong> A dedicated embedding generation service encodes spectra into a shared latent space using a pretrained cross-modal model deployed via an optimized inference backend.</p></div></div>
+          <div class="column is-4"><div class="rollup-item"><span class="rollup-step">5</span><p><strong>Retrieval Engine and Molecular Search Database:</strong> The retrieval subsystem combines constraint-based filtering and vector similarity search over a large-scale molecular database.</p></div></div>
+          <div class="column is-4"><div class="rollup-item"><span class="rollup-step">6</span><p>Together, these components define a modular and extensible architecture that supports efficient processing, scalable candidate retrieval, and practical deployment in real-world analytical settings.</p></div></div>
         </div>
       </div>
     </section>
 
     <section class="section section-soft" id="demo">
       <div class="container is-max-desktop">
-        <h2 class="title is-3">System Demo</h2>
+        <h2 class="title is-3">Demonstration of the Deployed Retrieval System</h2>
         <div class="video-center-wrap">
           <video class="demo-video" controls preload="metadata" poster="static/images/carousel1.jpg">
             <source src="static/videos/banner_video.mp4" type="video/mp4">
@@ -209,18 +225,22 @@
 
     <section class="section">
       <div class="container is-max-desktop">
-        <h2 class="title is-3">Model Training and Retrieval Behavior</h2>
+        <h2 class="title is-3">Unified Evaluation Results</h2>
+        <div class="content has-text-justified">
+          <p>This subsection summarizes the quantitative results obtained with the unified evaluation pipeline. It reports the embedding-space quality and retrieval performance of the two selected models, JESTR and CSU-MS2, evaluated under identical conditions.</p>
+          <p>Both models are able to separate matching and mismatched spectrum--molecule pairs in the learned latent space, as the observed differences between self-similarity and random-similarity distributions show.</p>
+        </div>
         <div class="columns is-multiline">
           <div class="column is-6">
             <figure class="figure-card">
               <img src="static/images/CSU-MS2_TRANING.png" alt="CSU-MS2 training dynamics">
-              <figcaption>CSU-MS2 training dynamics.</figcaption>
+              <figcaption>Training dynamics of the CSU-MS2 model.</figcaption>
             </figure>
           </div>
           <div class="column is-6">
             <figure class="figure-card">
               <img src="static/images/csu_ms_2_sim_distribution.png" alt="CSU-MS2 similarity distribution">
-              <figcaption>Embedding separation between matching and random pairs.</figcaption>
+              <figcaption>Distribution of self-similarity and random-similarity values for the CSU-MS2 model.</figcaption>
             </figure>
           </div>
         </div>
@@ -235,15 +255,18 @@
 
     <section class="section section-soft" id="results">
       <div class="container is-max-desktop">
-        <h2 class="title is-3">Final Results</h2>
+        <h2 class="title is-3">Main Contributions and Final Results</h2>
+        <div class="content has-text-justified">
+          <p>This thesis has addressed the problem of scalable spectrum--molecule matching for tandem mass spectrometry by developing and evaluating an end-to-end retrieval framework for matching MS/MS spectra with candidate molecular structures. The main contributions and obtained results are summarized below.</p>
+        </div>
 
         <div class="metrics-grid">
-          <div class="metric-card"><span class="metric-value">1,382,425</span><span class="metric-label">Validated Spectrum-Molecule Pairs</span></div>
-          <div class="metric-card"><span class="metric-value">872,935</span><span class="metric-label">Candidate Molecules in Search DB</span></div>
-          <div class="metric-card"><span class="metric-value">0.0899 s</span><span class="metric-label">Average Processing Time per Spectrum</span></div>
-          <div class="metric-card"><span class="metric-value">11</span><span class="metric-label">Stable Parallel File Requests</span></div>
-          <div class="metric-card"><span class="metric-value">3000</span><span class="metric-label">Spectra per File within Timeout</span></div>
-          <div class="metric-card"><span class="metric-value">F = 0</span><span class="metric-label">Request-Level Failure Rate for Malformed Inputs</span></div>
+          <div class="metric-card"><span class="metric-value">1,382,425</span><span class="metric-label">Validated Spectrum--Molecule Pairs</span></div>
+          <div class="metric-card"><span class="metric-value">872,935</span><span class="metric-label">Molecular Search Database Candidate Structures</span></div>
+          <div class="metric-card"><span class="metric-value">0.089934 s</span><span class="metric-label">Average Processing Time per Spectrum</span></div>
+          <div class="metric-card"><span class="metric-value">11</span><span class="metric-label">Stable Execution Under Concurrent File Requests</span></div>
+          <div class="metric-card"><span class="metric-value">3000</span><span class="metric-label">Successful Processing Within Timeout Constraints</span></div>
+          <div class="metric-card"><span class="metric-value">F = 0</span><span class="metric-label">Request-Level Failure Rate Under Malformed Input Scenarios</span></div>
         </div>
 
         <div class="compact-table-wrap">
@@ -283,10 +306,11 @@
 
     <section class="section">
       <div class="container is-max-desktop">
-        <h2 class="title is-3">Conclusion</h2>
+        <h2 class="title is-3">Conclusion and Research Significance</h2>
         <div class="content has-text-justified">
-          <p>This work demonstrates that scalable AI-assisted spectrum annotation requires more than an accurate model. The main contribution is a complete research-to-deployment pipeline: curated data, controlled benchmarking, and a practical retrieval system with measurable robustness and speed.</p>
-          <p>The resulting engine is best interpreted as a high-quality candidate generation and ranking tool that supports expert chemical analysis under realistic laboratory conditions.</p>
+          <p>The significance of this work lies in demonstrating that scalable AI-assisted molecular annotation constitutes a complex multidisciplinary scientific and engineering challenge that extends far beyond isolated model development. The obtained results show that practical spectrum--molecule retrieval requires the coordinated integration of large-scale data engineering, standardized benchmarking methodology, cross-modal machine learning, retrieval-oriented database infrastructure, and deployable software-system design.</p>
+          <p>At the same time, the conducted study highlights that practical molecular annotation from MS/MS spectra remains an open problem with substantial scientific and technical limitations. Although the developed framework demonstrated stable large-scale retrieval capability, the achieved top-ranked retrieval accuracy remains insufficient for fully autonomous molecular identification in realistic open-world chemical search spaces.</p>
+          <p>Overall, this thesis demonstrates that the developed system and experimental results establish a reproducible foundation for future research toward more accurate, robust, and operationally practical AI-assisted molecular annotation platforms.</p>
         </div>
       </div>
     </section>
