@@ -34,7 +34,7 @@ body {
 }
 
 .container.is-max-desktop {
-  max-width: min(1360px, 96vw) !important;
+  max-width: min(1460px, 99.2vw) !important;
 }
 
 .hero {
@@ -47,7 +47,7 @@ body {
 }
 
 .hero-body {
-  padding: 2.9rem 0.9rem 2.1rem;
+  padding: 2.9rem 0.45rem 2.1rem;
 }
 
 .publication-title {
@@ -130,7 +130,7 @@ body {
 }
 
 .section {
-  padding: 3.2rem 0.9rem;
+  padding: 3.2rem 0.45rem;
 }
 
 .section-soft {
@@ -148,7 +148,7 @@ body {
 
 .content.has-text-justified {
   color: var(--ink-mid);
-  font-size: 1.16rem;
+  font-size: 1.24rem;
   line-height: 1.82;
 }
 
@@ -162,19 +162,19 @@ body {
 }
 
 .intro-figure {
-  padding: 1rem;
+  padding: 1.15rem;
 }
 
 .intro-figure img {
   width: 100%;
-  min-height: 320px;
-  height: auto;
+  height: clamp(360px, 34vw, 520px);
   object-fit: contain;
   border-radius: 10px;
 }
 
 .intro-figure figcaption {
-  font-size: 1rem;
+  font-size: 1.06rem;
+  line-height: 1.5;
 }
 
 .figure-card {
@@ -196,7 +196,7 @@ body {
 
 .figure-card figcaption {
   margin-top: 0.6rem;
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: var(--ink-soft);
 }
 
@@ -305,7 +305,7 @@ body {
 
 .metric-slide-caption {
   margin: 0.7rem 0 0.1rem;
-  font-size: 0.92rem;
+  font-size: 1rem;
   line-height: 1.45;
   color: var(--ink-soft);
   text-align: center;
@@ -364,6 +364,14 @@ body {
 
 .compact-table-wrap {
   margin-top: 1.15rem;
+}
+
+.conclusion-section {
+  padding-bottom: 1rem;
+}
+
+.bibtex-section {
+  padding-top: 0.45rem;
 }
 
 .compact-results-table {
@@ -576,7 +584,7 @@ code {
 
 @media screen and (max-width: 768px) {
   .hero-body {
-    padding: 2.2rem 1rem 1.7rem;
+    padding: 2.2rem 0.55rem 1.7rem;
   }
 
   .publication-title {
@@ -585,20 +593,20 @@ code {
   }
 
   .section {
-    padding: 2.3rem 0.75rem;
+    padding: 2.3rem 0.4rem;
   }
 
   .container.is-max-desktop {
-    max-width: 98vw !important;
+    max-width: 99.4vw !important;
   }
 
   .content.has-text-justified {
-    font-size: 1.06rem;
+    font-size: 1.13rem;
     line-height: 1.72;
   }
 
   .intro-figure img {
-    min-height: 240px;
+    height: clamp(260px, 56vw, 420px);
   }
 
   .metrics-grid {
