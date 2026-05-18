@@ -53,18 +53,19 @@ body {
 .publication-title {
   font-family: 'Space Grotesk', 'IBM Plex Sans', sans-serif !important;
   color: var(--lab-navy) !important;
-  line-height: 1.08 !important;
+  line-height: 1.14 !important;
   font-weight: 700 !important;
-  font-size: clamp(2.35rem, 5vw, 4rem) !important;
-  margin-bottom: 0.55rem !important;
+  font-size: clamp(2rem, 3.7vw, 3rem) !important;
+  margin-bottom: 0.4rem !important;
   text-wrap: balance;
 }
 
 .hero-subtitle {
-  max-width: 760px;
-  margin: 0 auto 0.8rem;
-  font-size: clamp(1.2rem, 2.25vw, 1.52rem);
-  line-height: 1.35;
+  max-width: 980px;
+  margin: 0 auto 1rem;
+  font-size: clamp(1.28rem, 2.3vw, 1.72rem);
+  font-weight: 500;
+  line-height: 1.4;
   color: var(--ink-mid);
   text-wrap: balance;
 }
