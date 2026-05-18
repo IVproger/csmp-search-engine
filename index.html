@@ -4,46 +4,36 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta name="title" content="CSMP Search Engine Thesis - Ivan Golov">
-  <meta name="description" content="A concise thesis project page on scalable spectrum-molecule retrieval for MS/MS: motivation, research questions, architecture, demo plan, and final results.">
-  <meta name="keywords" content="mass spectrometry, MS/MS, molecular retrieval, contrastive learning, CSU-MS2, JESTR, cheminformatics, FastAPI, Triton">
-  <meta name="author" content="Ivan Golov">
+  <meta name="title" content="Contrastive Spectrum-Molecular Pretraining (CSMP): Building a Chemical Search Engine for Matching Tandem Mass Spectra with Molecular Structures">
+  <meta name="description" content="Thesis project on scalable MS/MS spectrum-molecule retrieval: motivation, research questions, system architecture, demo, and quantitative results.">
+  <meta name="keywords" content="MS/MS, tandem mass spectrometry, molecular retrieval, contrastive learning, CSU-MS2, JESTR, chemical search engine, cheminformatics">
+  <meta name="author" content="Ivan Golov, Rustam Lukmanov">
   <meta name="robots" content="index, follow">
   <meta name="language" content="English">
 
   <meta property="og:type" content="article">
-  <meta property="og:site_name" content="CSMP Thesis Project">
-  <meta property="og:title" content="CSMP Search Engine Thesis">
-  <meta property="og:description" content="From spectral dark matter to a deployable retrieval engine for MS/MS annotation.">
+  <meta property="og:site_name" content="Innopolis University Thesis">
+  <meta property="og:title" content="CSMP: Building a Chemical Search Engine for Tandem Mass Spectra">
+  <meta property="og:description" content="End-to-end thesis project: data curation, model benchmarking, and deployment of a practical molecular retrieval system.">
   <meta property="og:url" content="https://your-domain.example/csmp-search-engine">
-  <meta property="og:image" content="https://your-domain.example/static/images/social_preview.png">
+  <meta property="og:image" content="https://your-domain.example/static/images/CSMP_arhitecture_diagram.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="CSMP Search Engine Thesis Preview">
-  <meta property="article:published_time" content="2026-05-18T00:00:00.000Z">
-  <meta property="article:author" content="Ivan Golov">
-  <meta property="article:section" content="Research">
-  <meta property="article:tag" content="Mass Spectrometry">
-  <meta property="article:tag" content="Machine Learning">
+  <meta property="og:image:alt" content="CSMP architecture diagram">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@ivproger">
-  <meta name="twitter:creator" content="@ivproger">
-  <meta name="twitter:title" content="CSMP Search Engine Thesis">
-  <meta name="twitter:description" content="Scalable spectrum-molecule retrieval for tandem mass spectrometry.">
-  <meta name="twitter:image" content="https://your-domain.example/static/images/social_preview.png">
-  <meta name="twitter:image:alt" content="CSMP Search Engine Thesis Preview">
+  <meta name="twitter:title" content="CSMP Thesis Project">
+  <meta name="twitter:description" content="Chemical search engine for matching tandem mass spectra with molecular structures.">
+  <meta name="twitter:image" content="https://your-domain.example/static/images/CSMP_arhitecture_diagram.jpg">
 
-  <meta name="citation_title" content="Scalable Spectrum-Molecule Retrieval for Tandem Mass Spectrometry">
+  <meta name="citation_title" content="Contrastive Spectrum-Molecular Pretraining (CSMP): Building a Chemical Search Engine for Matching Tandem Mass Spectra with Molecular Structures">
   <meta name="citation_author" content="Golov, Ivan">
+  <meta name="citation_author" content="Lukmanov, Rustam">
   <meta name="citation_publication_date" content="2026">
   <meta name="citation_conference_title" content="Thesis Defense">
   <meta name="citation_pdf_url" content="main.pdf">
 
-  <meta name="theme-color" content="#2563eb">
-  <meta name="msapplication-TileColor" content="#2563eb">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#0b1f33">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,7 +41,7 @@
   <link rel="preconnect" href="https://documentcloud.adobe.com">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
-  <title>CSMP Search Engine Thesis - Ivan Golov</title>
+  <title>CSMP Thesis | Ivan Golov & Rustam Lukmanov</title>
 
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link rel="apple-touch-icon" href="static/images/favicon.ico">
@@ -60,67 +50,34 @@
   <link rel="stylesheet" href="static/css/index.css">
 
   <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-
   <noscript>
     <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
     <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   </noscript>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet">
 
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
   <script defer src="static/js/bulma-carousel.min.js"></script>
   <script defer src="static/js/bulma-slider.min.js"></script>
   <script defer src="static/js/index.js"></script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ScholarlyArticle",
-    "headline": "Scalable Spectrum-Molecule Retrieval for Tandem Mass Spectrometry",
-    "description": "An end-to-end thesis project: curated large-scale data, unified model benchmarking, and deployment of a practical molecular retrieval engine.",
-    "author": [{
-      "@type": "Person",
-      "name": "Ivan Golov",
-      "affiliation": {
-        "@type": "Organization",
-        "name": "University Thesis Project"
-      }
-    }],
-    "datePublished": "2026-05-18",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Thesis Defense"
-    },
-    "url": "https://your-domain.example/csmp-search-engine",
-    "keywords": ["MS/MS", "Molecule Retrieval", "CSU-MS2", "Cheminformatics"],
-    "isAccessibleForFree": true,
-    "license": "https://creativecommons.org/licenses/by/4.0/"
-  }
-  </script>
 </head>
 <body>
-
   <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
     <i class="fas fa-chevron-up"></i>
   </button>
 
   <div class="more-works-container">
-    <button class="more-works-btn" onclick="toggleMoreWorks()" title="Related Research Works">
-      <i class="fas fa-flask"></i>
-      Related Works
+    <button class="more-works-btn" onclick="toggleMoreWorks()" title="Related Literature">
+      <i class="fas fa-book-open"></i>
+      References
       <i class="fas fa-chevron-down dropdown-arrow"></i>
     </button>
     <div class="more-works-dropdown" id="moreWorksDropdown">
       <div class="dropdown-header">
-        <h4>Key References</h4>
+        <h4>Core Related Works</h4>
         <button class="close-btn" onclick="toggleMoreWorks()">
           <i class="fas fa-times"></i>
         </button>
@@ -129,7 +86,7 @@
         <a href="https://arxiv.org/abs/2502.06354" class="work-item" target="_blank">
           <div class="work-info">
             <h5>JESTR</h5>
-            <p>Joint embedding for spectra and molecules with dual encoders.</p>
+            <p>Joint embedding for spectra and molecules.</p>
             <span class="work-venue">arXiv 2025</span>
           </div>
           <i class="fas fa-external-link-alt"></i>
@@ -137,16 +94,8 @@
         <a href="https://arxiv.org/abs/2504.16513" class="work-item" target="_blank">
           <div class="work-info">
             <h5>CSU-MS2</h5>
-            <p>Transformer + graph encoder retrieval model for MS/MS.</p>
+            <p>Dual-encoder retrieval with transformer + GIN.</p>
             <span class="work-venue">arXiv 2025</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://arxiv.org/abs/2410.23326" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>MassSpecGym</h5>
-            <p>Benchmark for machine learning in mass spectrometry.</p>
-            <span class="work-venue">NeurIPS 2024</span>
           </div>
           <i class="fas fa-external-link-alt"></i>
         </a>
@@ -155,160 +104,179 @@
   </div>
 
   <main id="main-content">
-    <section class="hero">
+    <section class="hero hero-lab">
       <div class="hero-body">
         <div class="container is-max-desktop">
-          <div class="columns is-centered">
-            <div class="column has-text-centered">
-              <h1 class="title is-1 publication-title">From Spectral Dark Matter to a Deployable Search Engine</h1>
-              <div class="is-size-5 publication-authors">
-                <span class="author-block"><strong>Ivan Golov</strong></span>
-              </div>
-              <div class="is-size-5 publication-authors">
-                <span class="author-block">Thesis Project: Scalable Spectrum-Molecule Matching for MS/MS</span>
-              </div>
-              <div class="column has-text-centered">
-                <div class="publication-links">
-                  <span class="link-block">
-                    <a href="main.pdf" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon"><i class="fas fa-file-pdf"></i></span>
-                      <span>Thesis PDF</span>
-                    </a>
-                  </span>
-                  <span class="link-block">
-                    <a href="https://github.com/IVproger/csmp_search_engine.git" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon"><i class="fab fa-github"></i></span>
-                      <span>Search Engine Code</span>
-                    </a>
-                  </span>
-                  <span class="link-block">
-                    <a href="https://github.com/IVproger/csmp-data-pipeline" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon"><i class="fas fa-database"></i></span>
-                      <span>Data Pipeline</span>
-                    </a>
-                  </span>
-                </div>
-              </div>
-            </div>
+          <div class="brand-row">
+            <img src="static/images/logo.png" alt="Project logo" class="brand-logo">
+            <span class="brand-caption">Innopolis University | Thesis Project</span>
+          </div>
+          <h1 class="title is-1 publication-title">
+            Contrastive Spectrum-Molecular Pretraining (CSMP):<br>
+            Building a Chemical Search Engine for Matching Tandem Mass Spectra with Molecular Structures
+          </h1>
+
+          <div class="authors-block">
+            <p><strong>Ivan Golov</strong> · <a href="mailto:i.golov@innopolis.university">i.golov@innopolis.university</a></p>
+            <p><strong>Rustam Lukmanov</strong> · <a href="mailto:r.lukmanov@innopolis.university">r.lukmanov@innopolis.university</a></p>
+            <p class="institution">Innopolis University</p>
+          </div>
+
+          <div class="publication-links">
+            <span class="link-block">
+              <a href="main.pdf" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                <span>Thesis PDF</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="https://github.com/IVproger/csmp_search_engine.git" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fab fa-github"></i></span>
+                <span>Search Engine Code</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="https://github.com/IVproger/csmp-data-pipeline" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fas fa-database"></i></span>
+                <span>Data Pipeline</span>
+              </a>
+            </span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section hero is-light">
+    <section class="section">
       <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">Motivation and Core Problem</h2>
+        <h2 class="title is-3">Motivation and Key Problem</h2>
+        <div class="columns is-vcentered">
+          <div class="column is-7">
             <div class="content has-text-justified">
-              <p>
-                In tandem mass spectrometry, many spectra remain unannotated because classic library matching works well only for known compounds. In real lab practice, chemists often face novel molecules, heterogeneous instrument settings, and inconsistent metadata, which turns annotation into a slow and expert-heavy process.
-              </p>
-              <p>
-                This thesis asks a practical question: can we move from isolated ML experiments to an end-to-end system that actually helps identify molecules from MS/MS spectra at scale?
-              </p>
+              <p>Tandem mass spectrometry is one of the most powerful tools for molecular analysis, yet practical annotation remains difficult. Classical library-based matching is highly effective for known compounds but weak for novel molecules, structural isomers, and underrepresented chemical regions.</p>
+              <p>In real workflows, heterogeneous file formats, metadata inconsistency, and instrument-dependent fragmentation patterns create a large amount of unannotated spectral data. The core thesis challenge was to bridge this gap by building a reproducible, scalable, and deployable retrieval system rather than a model-only prototype.</p>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container is-max-desktop">
-        <h2 class="title is-3 has-text-centered">Research Questions and Goals</h2>
-        <div class="columns is-multiline">
-          <div class="column is-4">
-            <article class="message is-info thesis-card">
-              <div class="message-header"><p>RQ1: Data Foundation</p></div>
-              <div class="message-body">
-                How to transform noisy, heterogeneous public MS/MS resources into a reliable, leakage-aware benchmark for training and evaluation?
-              </div>
-            </article>
-          </div>
-          <div class="column is-4">
-            <article class="message is-link thesis-card">
-              <div class="message-header"><p>RQ2: Model Benchmarking</p></div>
-              <div class="message-body">
-                How well do modern dual-encoder methods (JESTR, CSU-MS2) solve spectrum-molecule matching under one unified protocol?
-              </div>
-            </article>
-          </div>
-          <div class="column is-4">
-            <article class="message is-success thesis-card">
-              <div class="message-header"><p>RQ3: Deployment</p></div>
-              <div class="message-body">
-                Can the strongest model be deployed in a robust retrieval system with practical speed, scalability, and failure-safe behavior?
-              </div>
-            </article>
+          <div class="column is-5">
+            <figure class="figure-card">
+              <img src="static/images/fragmentation_analyzis.png" alt="Fragmentation analysis">
+              <figcaption>MS/MS fragmentation behavior motivates representation-driven retrieval.</figcaption>
+            </figure>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section hero is-light">
+    <section class="section section-soft">
       <div class="container is-max-desktop">
-        <h2 class="title is-3 has-text-centered">Component Rollup (Architecture in One View)</h2>
+        <h2 class="title is-3">Research Questions and Goals</h2>
+        <div class="rq-list">
+          <div class="rq-item"><span class="rq-tag">RQ1</span><p>How can heterogeneous public MS/MS data be curated into a leakage-aware benchmark for reliable training and evaluation?</p></div>
+          <div class="rq-item"><span class="rq-tag">RQ2</span><p>How do modern cross-modal dual encoders perform under one unified protocol (JESTR vs CSU-MS2)?</p></div>
+          <div class="rq-item"><span class="rq-tag">RQ3</span><p>How can the best model be integrated into a robust, low-latency chemical search engine for real usage?</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="architecture">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Architecture and Component Rollup</h2>
         <div class="content has-text-justified">
-          <p>
-            The deployed system is a modular pipeline: <strong>Web UI → FastAPI orchestration → Spectrum preprocessing → Triton inference (CSU-MS2 encoder) → Mass-filtered candidate generation + embedding ranking → Result table with molecule details</strong>.
-          </p>
+          <p>The deployed CSMP system is a modular pipeline designed for practical operation: web interface for spectrum submission, FastAPI orchestration, spectrum preprocessing and metadata parsing, CSU-MS2 inference via Triton, and mass-constrained embedding retrieval over an indexed molecular database.</p>
         </div>
-        <div class="columns is-multiline rollout-grid">
-          <div class="column is-4"><div class="rollup-item"><span class="rollup-step">1</span><p>Upload spectral files (mzML/MGF/MSP/JSON).</p></div></div>
-          <div class="column is-4"><div class="rollup-item"><span class="rollup-step">2</span><p>FastAPI validates input and batches requests.</p></div></div>
-          <div class="column is-4"><div class="rollup-item"><span class="rollup-step">3</span><p>Preprocessing normalizes peaks and metadata.</p></div></div>
-          <div class="column is-4"><div class="rollup-item"><span class="rollup-step">4</span><p>Triton serves the model and returns spectrum embeddings.</p></div></div>
-          <div class="column is-4"><div class="rollup-item"><span class="rollup-step">5</span><p>Search engine filters by precursor mass and ranks by embedding similarity.</p></div></div>
-          <div class="column is-4"><div class="rollup-item"><span class="rollup-step">6</span><p>UI shows top candidates and structural details for review.</p></div></div>
+        <figure class="figure-card large">
+          <img src="static/images/CSMP_arhitecture_diagram.jpg" alt="CSMP system architecture diagram">
+          <figcaption>End-to-end architecture: from uploaded spectra to ranked molecular candidates.</figcaption>
+        </figure>
+        <div class="columns is-multiline rollup-grid">
+          <div class="column is-4"><div class="rollup-item"><span class="rollup-step">1</span><p>Input files: mzML, MGF, MSP, JSON.</p></div></div>
+          <div class="column is-4"><div class="rollup-item"><span class="rollup-step">2</span><p>FastAPI validates requests and coordinates batching.</p></div></div>
+          <div class="column is-4"><div class="rollup-item"><span class="rollup-step">3</span><p>Preprocessing standardizes spectra and precursor metadata.</p></div></div>
+          <div class="column is-4"><div class="rollup-item"><span class="rollup-step">4</span><p>Triton serves CSU-MS2 spectrum embeddings.</p></div></div>
+          <div class="column is-4"><div class="rollup-item"><span class="rollup-step">5</span><p>Mass filter narrows candidates before similarity search.</p></div></div>
+          <div class="column is-4"><div class="rollup-item"><span class="rollup-step">6</span><p>UI presents ranked candidates and molecule details.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="demo">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">System Demo</h2>
+        <div class="video-center-wrap">
+          <video class="demo-video" controls preload="metadata" poster="static/images/carousel1.jpg">
+            <source src="static/videos/banner_video.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container is-max-desktop">
-        <h2 class="title is-3 has-text-centered">Demo Placeholders for Defense</h2>
+        <h2 class="title is-3">Model Training and Retrieval Behavior</h2>
         <div class="columns is-multiline">
-          <div class="column is-12">
-            <div class="placeholder-media">
-              <h3>[PLACEHOLDER] 60-90 sec thesis demo video</h3>
-              <p>Insert a short screen recording: file upload → processing indicator → ranked candidate list.</p>
-            </div>
+          <div class="column is-6">
+            <figure class="figure-card">
+              <img src="static/images/CSU-MS2_TRANING.png" alt="CSU-MS2 training dynamics">
+              <figcaption>CSU-MS2 training dynamics.</figcaption>
+            </figure>
           </div>
           <div class="column is-6">
-            <div class="placeholder-media small">
-              <h3>[PLACEHOLDER] Architecture slide image</h3>
-              <p>Insert one clean diagram with six components from the rollup above.</p>
-            </div>
+            <figure class="figure-card">
+              <img src="static/images/csu_ms_2_sim_distribution.png" alt="CSU-MS2 similarity distribution">
+              <figcaption>Embedding separation between matching and random pairs.</figcaption>
+            </figure>
           </div>
-          <div class="column is-6">
-            <div class="placeholder-media small">
-              <h3>[PLACEHOLDER] UI screenshot collage</h3>
-              <p>Insert 3 frames: spectrum preview, candidate table, molecule details panel.</p>
-            </div>
-          </div>
+        </div>
+        <div id="results-carousel" class="carousel results-carousel screenshot-carousel">
+          <div class="item"><img src="static/images/carousel1.jpg" alt="Search engine screenshot 1" loading="lazy"></div>
+          <div class="item"><img src="static/images/carousel2.jpg" alt="Search engine screenshot 2" loading="lazy"></div>
+          <div class="item"><img src="static/images/carousel3.jpg" alt="Search engine screenshot 3" loading="lazy"></div>
+          <div class="item"><img src="static/images/carousel4.jpg" alt="Search engine screenshot 4" loading="lazy"></div>
         </div>
       </div>
     </section>
 
-    <section class="section hero is-light">
+    <section class="section section-soft" id="results">
       <div class="container is-max-desktop">
-        <h2 class="title is-3 has-text-centered">Final Results</h2>
-        <div class="table-container">
-          <table class="table is-fullwidth is-striped is-hoverable">
+        <h2 class="title is-3">Final Results</h2>
+
+        <div class="metrics-grid">
+          <div class="metric-card"><span class="metric-value">1,382,425</span><span class="metric-label">Validated Spectrum-Molecule Pairs</span></div>
+          <div class="metric-card"><span class="metric-value">872,935</span><span class="metric-label">Candidate Molecules in Search DB</span></div>
+          <div class="metric-card"><span class="metric-value">0.0899 s</span><span class="metric-label">Average Processing Time per Spectrum</span></div>
+          <div class="metric-card"><span class="metric-value">11</span><span class="metric-label">Stable Parallel File Requests</span></div>
+          <div class="metric-card"><span class="metric-value">3000</span><span class="metric-label">Spectra per File within Timeout</span></div>
+          <div class="metric-card"><span class="metric-value">F = 0</span><span class="metric-label">Request-Level Failure Rate for Malformed Inputs</span></div>
+        </div>
+
+        <div class="compact-table-wrap">
+          <table class="table is-fullwidth is-bordered is-striped compact-results-table">
             <thead>
               <tr>
-                <th>Result Block</th>
-                <th>Outcome</th>
+                <th>Model</th>
+                <th>KL</th>
+                <th>Hit@1</th>
+                <th>Hit@100</th>
+                <th>Recall@1</th>
+                <th>Recall@100</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td>Curated paired dataset</td><td><strong>1,382,425</strong> validated spectrum-molecule pairs</td></tr>
-              <tr><td>Molecular search database</td><td><strong>872,935</strong> candidate structures</td></tr>
-              <tr><td>Best model under unified benchmark</td><td><strong>CSU-MS2</strong> (better embedding separation and retrieval quality vs JESTR)</td></tr>
-              <tr><td>Retrieval quality</td><td>Hit Rate@1: <strong>0.2147</strong>, Hit Rate@100: <strong>0.9053</strong>, Recall@1: <strong>0.1737</strong>, Recall@100: <strong>0.8719</strong></td></tr>
-              <tr><td>Processing speed</td><td><strong>0.089934 s</strong> per spectrum (avg)</td></tr>
-              <tr><td>Concurrency and capacity</td><td>Stable up to <strong>11</strong> concurrent requests; up to <strong>3000</strong> spectra per file in timeout constraints</td></tr>
-              <tr><td>Robustness</td><td>Request-level failure rate under malformed input: <strong>F = 0</strong></td></tr>
+              <tr>
+                <td>JESTR</td>
+                <td>1.6815</td>
+                <td>0.1137</td>
+                <td>0.8660</td>
+                <td>0.0988</td>
+                <td>0.8510</td>
+              </tr>
+              <tr>
+                <td><strong>CSU-MS2</strong></td>
+                <td><strong>3.4280</strong></td>
+                <td><strong>0.2147</strong></td>
+                <td><strong>0.9053</strong></td>
+                <td><strong>0.1737</strong></td>
+                <td><strong>0.8719</strong></td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -317,14 +285,10 @@
 
     <section class="section">
       <div class="container is-max-desktop">
-        <h2 class="title is-3 has-text-centered">Takeaway for the Committee</h2>
+        <h2 class="title is-3">Conclusion</h2>
         <div class="content has-text-justified">
-          <p>
-            This thesis delivers not only model experiments, but a reproducible end-to-end system. The key contribution is the integration of large-scale data engineering, unified model benchmarking, and deployable software architecture into one practical retrieval workflow.
-          </p>
-          <p>
-            The system is not yet a fully autonomous molecular identifier, but it already works as a reliable hypothesis-generation tool that narrows candidate space and supports expert decision-making in realistic analytical settings.
-          </p>
+          <p>This work demonstrates that scalable AI-assisted spectrum annotation requires more than an accurate model. The main contribution is a complete research-to-deployment pipeline: curated data, controlled benchmarking, and a practical retrieval system with measurable robustness and speed.</p>
+          <p>The resulting engine is best interpreted as a high-quality candidate generation and ranking tool that supports expert chemical analysis under realistic laboratory conditions.</p>
         </div>
       </div>
     </section>
@@ -338,11 +302,11 @@
             <span class="copy-text">Copy</span>
           </button>
         </div>
-        <pre id="bibtex-code"><code>@misc{golov2026csmp,
-  title={Scalable Spectrum-Molecule Retrieval for Tandem Mass Spectrometry},
-  author={Ivan Golov},
+        <pre id="bibtex-code"><code>@misc{golov_lukmanov_2026_csmp,
+  title={Contrastive Spectrum-Molecular Pretraining (CSMP): Building a Chemical Search Engine for Matching Tandem Mass Spectra with Molecular Structures},
+  author={Ivan Golov and Rustam Lukmanov},
   year={2026},
-  note={Thesis project page},
+  institution={Innopolis University},
   url={https://github.com/IVproger/csmp_search_engine}
 }</code></pre>
       </div>
@@ -354,15 +318,11 @@
       <div class="columns is-centered">
         <div class="column is-8">
           <div class="content">
-            <p>
-              Built with the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.
-              This adapted page summarizes the thesis storyline for defense presentation.
-            </p>
+            <p>Adapted from the Academic Project Page Template for thesis defense presentation.</p>
           </div>
         </div>
       </div>
     </div>
   </footer>
-
 </body>
 </html>
