@@ -42,54 +42,42 @@ body {
 }
 
 .hero-body {
-  padding: 4.2rem 1.5rem 3.2rem;
-}
-
-.brand-row {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
-}
-
-.brand-logo {
-  width: 52px;
-  height: 52px;
-  border-radius: 10px;
-  object-fit: cover;
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--line);
-  background: #fff;
-}
-
-.brand-caption {
-  font-size: 0.9rem;
-  color: var(--ink-soft);
-  letter-spacing: 0.02em;
+  padding: 2.9rem 1.5rem 2.1rem;
 }
 
 .publication-title {
   font-family: 'Space Grotesk', 'IBM Plex Sans', sans-serif !important;
   color: var(--lab-navy) !important;
-  line-height: 1.12 !important;
+  line-height: 1.08 !important;
   font-weight: 700 !important;
-  margin-bottom: 1.25rem !important;
+  font-size: clamp(2rem, 4.6vw, 3.5rem) !important;
+  margin-bottom: 0.55rem !important;
+  text-wrap: balance;
+}
+
+.hero-subtitle {
+  max-width: 760px;
+  margin: 0 auto 0.8rem;
+  font-size: clamp(1.05rem, 2.05vw, 1.38rem);
+  line-height: 1.35;
+  color: var(--ink-mid);
   text-wrap: balance;
 }
 
 .authors-block {
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 1rem 1.2rem;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0.1rem 0;
   max-width: 760px;
-  margin: 0 auto 1.25rem;
-  box-shadow: var(--shadow-sm);
+  margin: 0 auto 0.75rem;
+  box-shadow: none;
 }
 
 .authors-block p {
-  margin: 0.1rem 0;
+  margin: 0.03rem 0;
   color: var(--ink-mid);
+  font-size: 1.02rem;
 }
 
 .authors-block a {
@@ -103,11 +91,15 @@ body {
 
 .authors-block .institution {
   color: var(--ink-soft);
-  margin-top: 0.45rem;
+  margin-top: 0.2rem;
 }
 
 .publication-links {
-  margin-top: 0.65rem;
+  margin-top: 0.35rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .link-block a {
@@ -480,16 +472,16 @@ code {
 
 .works-list {
   padding: 0.7rem;
+  text-align: center;
 }
 
 .work-item {
-  display: flex;
-  justify-content: space-between;
-  gap: 0.75rem;
+  display: block;
   text-decoration: none;
   color: inherit;
   border-radius: 10px;
   padding: 0.75rem;
+  margin: 0 auto;
 }
 
 .work-item:hover {
@@ -520,16 +512,12 @@ code {
 
 @media screen and (max-width: 768px) {
   .hero-body {
-    padding: 3rem 1rem 2.4rem;
+    padding: 2.2rem 1rem 1.7rem;
   }
 
   .publication-title {
     font-size: 2rem !important;
     line-height: 1.2 !important;
-  }
-
-  .authors-block {
-    text-align: left;
   }
 
   .section {
